@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Sign Up{% endblock %}
+{% block content %}
+<div class="container" style=" display:flex; flex-direction:column; justify-content:center;min-height:100vh;">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 col-xl-5">
+            <h1 class="display-4">SignUp</h1>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label class="useremail" >Email Address:</label>
+                    <input type="email" placeholder="EmailAddress" class="form-control" name="email" autofocus="" required id="id_email">
+                </div>
+                <div class="form-group">
+                    <label class="username" >Username:</label>
+                    <input type="text" placeholder="UserName" class="form-control" name="username" autofocus="" required id="id_username">
+                </div>
+                <div class="form-group">
+                    <label class="userpassword" >Password:</label>
+                    <input class="form-control" id="id_password1" placeholder="Password" type="password" name="password1" required>
+                </div>
+                <div class="form-group">
+                    <label class="usercpassword" >Confirm Password:</label>
+                    <input class="form-control" id="id_password2" placeholder="Confirm Password" type="password" name="password2" required>
+                </div>
+                <button class="btn btn-primary btn-block waves-effect waves-light" type="submit">Signup</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
